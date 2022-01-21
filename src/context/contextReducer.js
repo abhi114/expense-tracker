@@ -1,7 +1,5 @@
 //reducer is a function that takes in an old state and an action and returns the old state
-const transactions = [
 
-]
 const contextReducer = (state,action) =>{
     let transactions;
     switch (action.type) {
