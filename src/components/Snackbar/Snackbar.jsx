@@ -4,15 +4,19 @@ import MuiAlert from '@material-ui/lab/Alert'
 
 import useStyles from './styles';
 
-import React from 'react';
 
-const CustomisedSnackbar = () => {
+const CustomisedSnackbar = ({open,setOpen}) => {
     const classes = useStyles();
+
+    const handleClose = (event,reason)=>{
+        if(reason === 'clickaway') return;
+        setOpen(false);
+    }
   return (
   <div className={classes.root}>
       <Snackbar
       anchorOrigin={{vertical:'top',horizontal:"right"}}
-      open={true}
+      open={open}
       autoHideDuration={3000}
       onClose={handleClose}>
           <MuiAlert onClose={handleClose} severity="success" elevation={6} variant="filled">
@@ -24,5 +28,5 @@ const CustomisedSnackbar = () => {
   )
 };
 
-export  CustomisedSnackbar;
+export default  CustomisedSnackbar;
 
