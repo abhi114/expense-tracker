@@ -6,6 +6,7 @@ import useStyles from './styles';
 import {PushToTalkButton,PushToTalkButtonContainer,ErrorPanel} from '@speechly/react-ui';
 import { SpeechState,useSpeechContext } from '@speechly/react-client';
 
+
 const App = () => {
     const classes  = useStyles();
     const {speechState} = useSpeechContext()
@@ -15,7 +16,9 @@ const App = () => {
       if(speechState === SpeechState.Recording){
         executeScroll();
       }
+      
     },[speechState]);
+    
 
   return (
     <div>
